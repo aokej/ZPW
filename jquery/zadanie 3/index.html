@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+        // $(document).ready(function(){
+        //     console.log("Working page");
+        // })
+
+        // $(function(){
+        //   $("button").on("click", function(){
+        //     $("#komunikat").text("Cześć!")
+        //     $("#kwadrat").css("background", "red")
+        //   })
+        // });
+
+        let $licznik = 0;
+
+        $(function(){
+          $("#kwadrat").on("click", function(){
+            $("#kwadrat").css("background", "red")
+            $licznik++
+            $("#komunikat").text($licznik)
+          })
+        });
+
+        $(function(){
+          $("#resetuj").on("click", function(){
+            $("#kwadrat").css("background", "grey")
+            $("#komunikat").text("");
+          })
+        });
+
+
+
+
+    </script>
+      <style>
+    #kwadrat { width: 150px; height: 150px; background: lightgray; }
+  </style>
+</head>
+<body>
+    <button id="przywitaj">Przywitaj się</button>
+    <button id="resetuj">Resetuj</button>
+  <p id="komunikat"></p>
+ 
+  <div id="kwadrat"></div>
+ 
+    
+</body>
+</html>
