@@ -1,0 +1,8 @@
+repozytorium - taki jakby folder przechowujacy pliki foldery itp
+github/gitlab/bitbucket - srodowiska w ktorych mozna przechowywac swoje repozytoria
+git - aplikacja powzalajaca na wprowadzanie zmian do projektu np: aktualizowanie, cofanie, laczenie roznych wersji
+commit - zapisanie zmian w historii projektu, podobnie do robienia save w grze
+branch - osobna gałąź projektu, zapobiega komplikacja w momencie gdy np kilka osob pracuje nad projektem
+checkout - przelaczenie sie na inny branch
+merge - polaczenie dwoch branchy
+rebase - przeniesienie swoich zmian na nowsza wersje innej galezi
