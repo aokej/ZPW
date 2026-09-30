@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            //Object Event
+
+            $(document).on("keydown keyup keypress", function(){
+                $("#eventType").text(event.type)
+            })
+
+            $(document).on("mousemove", function(event){
+                $("#pageX").text(event.pageX)
+                $("#pageY").text(event.pageY)
+            })
+
+
+            let $marg = 0
+            $(document).on("keypress", function(){
+                if(event.key == "d"){
+                    $marg= $marg+10;
+                }else if(event.key == "a"){
+                    $marg = $marg-10
+                }
+                $("#kwadrat").css("margin-left", $marg+"px" )
+            })
+            
+            let $marg2 = 0
+
+            $(document).on("keypress", function(){
+                if(event.key == "w"){
+                    $marg2= $marg2-10;
+                }else if(event.key == "s"){
+                    $marg2 = $marg2+10
+                }
+                $("#kwadrat").css("margin-top", $marg2+"px" )
+            })
+
+
+            $("#jablko").css({
+                "margin-left": Math.floor((Math.random()* 500) +1) + "px",
+                "margin-top": Math.floor((Math.random()* 500) +1) + "px"
+            })
+
+
+        })
+    </script>
+    <style>
+        
+        #kwadrat{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+        #jablko{
+            width: 20px;
+            height: 20px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    
+    
+    <input type="text" id="pole">
+    <p>
+        Typ zdarzenia:
+        <span id="eventType">---</span>
+    </p>
+
+    <p>
+        Pozycja myszy:
+        X = <span id="pageX">---</span>
+        Y = <span id="pageY">---</span>
+    </p>
+
+    <div id="kwadrat">
+
+    </div>
+    <div id="jablko">
+
+    </div>
+
+</body>
+</html>
