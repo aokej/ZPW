@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+
+        $(function(){
+            // $("#hide").on("click", function(){
+            //     $("p").hide()
+            // })
+
+            // $("#show").on("click", function(){
+            //     $("p").show()
+            // })
+
+            // $("#toggle").on("click", function(){
+            //     $("p").toggle()
+            // })
+
+            // $("#slideUp").on("click", function(){
+            //     $("p").slideUp()
+            // })
+
+            // $("#slideDown").on("click", function(){
+            //     $("p").slideDown()
+            // })
+
+            // $("#slideToggle").on("click", function(){
+            //     $("p").slideToggle()
+            // })
+
+            
+            $("input[name='p']").on("change", function(){
+                let opcja = $("input[name='p']:checked").val();
+                if(opcja == 3){
+                    $("l3").css("background-color", "green")
+                    
+                }
+            })
+
+
+
+        })
+
+    </script>
+
+</head>
+<body>
+    <!-- <p>tak</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <br>
+    <br>
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+    <button id="slideToggle">slideToggle</button> -->
+
+    <h3>pytanie 1</h3>
+    
+        <input type="radio" id="1" name="p" value="1">
+        <label for="p" id="l1">odp1</label>
+        <input type="radio" id="2" name="p" value="2">
+        <label for="p" id="l2">odp2</label>
+        <input type="radio" id="3" name="p" value="3">
+        <label for="p" id="l3">odp3</label>
+        <input type="radio" id="4" name="p" value="4">
+        <label for="p" id="l4">odp4</label>
+    
+
+
+</body>
+</html>
