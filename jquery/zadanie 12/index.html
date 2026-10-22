@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $("#kolor").change(function(){
+                $("#p1").text("Do zapłaty: "+ $(this).val() + "zł")
+            })
+
+            //////////////
+
+            $("#newsletter").change(function(){
+                if($(this).is(":checked")){
+                    $("#stan").text("zapisano")
+                }else{
+                    $("#stan").text("nie zapisano")
+                }
+            })
+        
+        ////////////////////////
+            
+       $("#regulamin").change(function(){
+            if($("#regulamin").is(":checked")){
+                $("#button1").prop("disabled", false)
+            }else{
+                $("#button1").prop("disabled", true)
+            }
+       })
+
+       $("#button1").prop("disabled", !$(this).is(":checked"))
+       ///////////////////////
+
+       $("#tekst").on("input",function(){
+            $("#podglad").text($(this).val())
+       })
+       /////////////////
+       $("#area").on("input", function(){
+        let charLeft = 100 - $("#area").val().length
+            $("#maks").text(charLeft)
+            
+       })
+
+
+
+    })
+    </script>
+</head>
+<body>
+    <select id="kolor">
+        <option value="20">mala</option>
+        <option value="30">srednia</option>
+        <option value="40">duza</option>
+    </select>
+    <hr>
+    <p id="p1"></p>
+
+
+    <input type="checkbox" id="newsletter"> Chce newsletter
+    <p id="stan"></p>
+    <hr>
+
+    <input type="checkbox" id="regulamin"> akceptuje
+    <button disabled id="button1">zarejstruj</button>
+    <hr>
+
+    <input type="text" id="tekst">
+    <p>Podglad: <span id="podglad"></span></p>
+    <hr>
+    <textarea id="area" maxlength="100"></textarea>
+    <p id="maks"></p>
+    <hr>
+
+
+</body>
+</html>
