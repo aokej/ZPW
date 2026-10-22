@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+
+            $("#sprawdz").click(function(){
+                let imie = $("#imie").val().trim()
+                if(imie === ""){
+                    $("#blad").text("Pole imie jest wymagane")
+                }else{
+                    $("#blad").text("twoje imie to: "+imie)
+                }
+            })
+            ////////////////
+            $("form").submit(function(e){
+                e.preventDefault()
+                let nazwisko = $("#nazwisko").val().trim()
+                if(nazwisko === ""){
+                    $("#p2").css("color","red")
+                    $("#p2").text("Pole nazwisko jest wymagane")
+                }else{
+                    $("#p2").css("color","green")
+                    $("#p2").text("wyslano")
+                }
+
+            })
+            ////////////////
+            $("#sprawdzWiek").click(function(){
+                let wiek = $("#wiek").val()
+                if(isNaN(wiek)){
+                    $("#bladWiek").text("wiek musi byc liczba")
+                }else{
+                    $("#bladWiek").text("masz "+ wiek + " lat")
+                }
+            })
+            /////////
+            $("#zapisz").click(function(){
+                let ocena = $("#ocena").val()
+                if(isNaN(ocena) || ocena < 1 || ocena > 6){
+                    $("#bladOcena").text("musi byc liczba 1-6")
+                }else{
+                    $("#bladOcena").text("zapisano ocene: "+ ocena)
+                }
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    
+    <input type="text" id="imie">
+    <button id="sprawdz">sprawdz</button>
+    <p id="blad"></p>
+    <hr>
+    <form>
+        <input type="text" id="nazwisko">
+        <button>wyslij</button>
+        <p id="p2"></p>
+
+    </form>
+    <hr>
+
+    <input type="text" id="wiek">
+    <button id="sprawdzWiek">sprawdz</button>
+    <p id="bladWiek"></p>
+    <hr>
+
+    <input type="text" id="ocena">
+    <button id="zapisz">zapisz</button>
+    <p id="bladOcena"></p>
+
+
+</body>
+</html>
