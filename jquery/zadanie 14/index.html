@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .slabe{
+            background-color: red;
+        }
+        .srednie{
+            background-color: orange;
+        }
+        .silne{
+            background-color: green;
+        }
+    </style>
+    <script>
+
+        $(function(){
+            // ZAD 1
+            // $(document).on("keyup", function(e){
+            //     console.log(event.key)
+            //     if(e.key == "Enter"){
+            //         let tekst =  $("#szukaj").val().trim()
+            //         if(tekst.length > 0){
+            //             $("#wynik").css("color", "black")
+            //             $("#wynik").text("Szukam: "+tekst)
+            //         }else{
+            //             $("#wynik").css("color","red")
+            //             $("#wynik").text("Wpisz frazę!")
+            //         }
+            //     }else if(e.key === "Escape"){
+            //         $("#wynik").text("")
+            //         $("#szukaj").val("")
+            //     }
+            // })
+
+
+            // ZAD 2
+            
+            // $("#haslo").on("input", function(){
+                
+            //     let haslo = $("#haslo").val()
+                
+            //     if(haslo.length < 6){
+                    
+            //         $("#sila").addClass("slabe")
+            //         $("#sila").text("slabe")
+            //     }else if(haslo.length < 10){
+            //         $("#sila").addClass("srednie")
+            //         $("#sila").text("srednie")
+            //     }else{
+            //         $("#sila").addClass("silne")
+            //         $("#sila").text("silne")
+            //     }
+            // })
+
+            // ZAD 3
+
+            // $("#logowanie").on("click", function(e){
+            //     e.preventDefault()
+            //     let login = $("#login").val().trim()
+            //     let haslo = $("#pass").val().trim()
+            //     if(login.length < 0){
+            //         $("#info").text("Podaj login")
+            //     }else if(haslo.length < 6){
+            //         $("#info").text("Hasło za krótkie")
+            //     }else{
+            //         $("#info").text("Witaj, "+login)
+            //     }
+
+            // })
+
+            // ZAD 4
+
+            // $("#rozmiar").on("change", function(){
+            //     let wartosc = $("#rozmiar").val()
+            //     $("#tekst").css("font-size", wartosc+"px")
+            //     console.log("Aktualny rozmiar: "+wartosc+" px")
+            // })
+
+            // ZAD 5
+
+
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+    
+    <input type="text" id="szukaj" placeholder="Szukaj...">
+    <p id="wynik"></p>
+    <hr>
+    <input type="password" id="haslo">
+    <p id="sila"></p>
+    <hr>
+
+    <form id="logowanie">
+  <input type="text" id="login" placeholder="Login">
+  <input type="password" id="pass" placeholder="Hasło">
+  <button type="submit">Zaloguj</button>
+</form>
+<p id="info"></p>
+<hr>
+
+
+<select id="rozmiar">
+  <option value="14">Mały</option>
+  <option value="20">Średni</option>
+  <option value="28">Duży</option>
+</select>
+<p id="tekst">Przykładowy tekst akapitu.</p>
+<hr>
+
+<label><input type="checkbox" class="dodatek" value="3"> Ser (3 zł)</label>
+<label><input type="checkbox" class="dodatek" value="5"> Szynka (5 zł)</label>
+<label><input type="checkbox" class="dodatek" value="4"> Pieczarki (4 zł)</label>
+<p>Cena: <span id="suma">20</span> zł</p>
+<label><input type="checkbox" id="akcept"> Potwierdzam zamówienie</label>
+<button id="zamow" disabled>Zamów</button>
+
+
+
+</body>
+</html>
